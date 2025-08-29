@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- Title of the page, this shows up in the browser tab -->
-		<title>Intro to Video Game Development</title>
+		<title id="i">JavaScript basics</title>
 
 		<!-- Link to the CSS file for styling -->
 		<link rel="stylesheet" href="css/style.css" />
@@ -18,9 +18,47 @@
 	<body>
 		<!-- Main title displayed on the web page -->
 		<h1>JavaScript Basics</h1>
-
+		<h2>and other things</h2>
+		<h3>similar to JavaScript Basics</h3>
+		<h4>and stuff like that</h4>
+		<button onclick="document.getElementById('i').innerHTML='oogabooga'">press me!</button>
+		<canvas id="myCanvas" width="500" height="400" style="border:2px solid #000000;"></canvas>
+		<script>
+			var c = document.getElementById("myCanvas")
+			var draw = c.getContext("2d")
+			draw.lineWidth=2
+			draw.moveTo(0,0);
+			draw.lineTo(500,400);
+			draw.stroke();
+			draw.beginPath()
+			draw.arc(250, 200, 175, 0, 2*Math.PI);
+			draw.stroke();
+			draw.beginPath();
+			draw.arc(275, 150, 50, 1.5*Math.PI, 0.5*Math.PI);
+			draw.stroke();
+			draw.beginPath();
+			draw.arc(250, 200, 150, 0, 2*Math.PI);
+			draw.stroke();
+			draw.beginPath();
+			draw.arc(275, 150, 25, 1.5*Math.PI, 0.5*Math.PI);
+			draw.lineTo(200, 175);
+			draw.lineTo(200, 125);
+			draw.lineTo(275, 125);
+			draw.stroke();
+			draw.moveTo(275, 100);
+			draw.lineTo(175, 100);
+			draw.lineTo(175, 300);
+			draw.lineTo(200, 300);
+			draw.lineTo(200, 200);
+			draw.lineTo(275, 200);
+			draw.stroke();
+		</script>
 		<!-- Link to your JavaScript file -->
 		<script src="scripts/app.js"></script>
+
+		<button onclick="enter()">enter</button>
+		<div id="Shadow1"></div>
 	</body>
+
 	<!-- End of the body tag -->
 </html>
