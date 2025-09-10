@@ -11,6 +11,12 @@
 
 		<!-- Link to the CSS file for styling -->
 		<link rel="stylesheet" href="css/style.css" />
+		<style>
+		.myDiv {
+			background-color: lightblue;
+			text-align: left;
+		}
+		</style>
 	</head>
 	<!-- End of the head tag -->
 
@@ -22,7 +28,11 @@
 		<h3>similar to JavaScript Basics</h3>
 		<h4>and stuff like that</h4>
 		<button onclick="document.getElementById('i').innerHTML='oogabooga'">press me!</button>
+		<div class="myDiv" id="div1">dabo-dee, dabo-die</div>
 		<canvas id="myCanvas" width="500" height="400" style="border:2px solid #000000;"></canvas>
+		<p>
+			<a href="rps.html">Rock, paper, scissors!</a>
+		</p>
 		<script>
 			var c = document.getElementById("myCanvas")
 			var draw = c.getContext("2d")
@@ -56,8 +66,7 @@
 		<!-- Link to your JavaScript file -->
 		<script src="scripts/app.js"></script>
 
-		<button onclick="enter()">enter</button>
-		<div id="Shadow1"></div>
+		<!--button onclick="enter()">enter</button-->
 	</body>
 
 	<!-- End of the body tag -->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Rock, paper, scissors: the last duel</title>
+
+		<link rel="stylesheet" href="css/style.css" />
+
+		<style>
+			.fail{
+				border: 5px outset #ff0000;
+				background-color: lightcoral;
+			}
+			.win{
+				border: 5px outset #bbbb00;
+				background-color: #ffff00;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Rock, paper, scissors</h1>
+		<h2>the last duel<br></h2>
+		<button id="reset" onclick="shoot(9)"></button>
+		<button onclick="shoot(0)">Rock!</button>
+		<button onclick="shoot(1)">Paper!</button>
+		<button onclick="shoot(2)">Scissors!</button>
+		<div id="duel"></div>
+
+		<script src="scripts/rps/app.js"></script>
+	</body>
+</html>
