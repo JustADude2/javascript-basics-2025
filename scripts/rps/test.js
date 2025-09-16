@@ -1,3 +1,4 @@
+let up, down, left, right = false;
 document.addEventListener("keydown", (event) => {
     console.log(event.key);
     if (event.key == "ArrowUp" || event.code == "KeyW") {

@@ -37,7 +37,7 @@ const shoot = function (weapon) {
             duelElement.innerHTML = "you won against the computer's " + options[comWeapon] + "!<br>computer's health: " + comHealth
         }else{
             //@ts-ignore
-            duelElement.innerHTML = "you tied!"
+            duelElement.innerHTML = "you tied!<br> "
             document.body.setAttribute("style", "background-color:#808080")
             setTimeout(() => {document.body.setAttribute("style", "background-color:#828282")}, 50)
             setTimeout(() => {document.body.setAttribute("style", "background-color:#848484")}, 100)
@@ -53,7 +53,7 @@ const shoot = function (weapon) {
             setTimeout(() => {document.body.setAttribute("style", "background-color:#D8D8D8")}, 550)
             setTimeout(() => {document.body.setAttribute("style", "background-color:#E6E6E6")}, 600)
             setTimeout(() => {document.body.setAttribute("style", "background-color:#F6F6F6")}, 650)
-            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFFFF")}, 700)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFFFF")}, 700)/*
             setTimeout(() => {document.body.setAttribute("style", "background-color:#828282")}, 750)
             setTimeout(() => {document.body.setAttribute("style", "background-color:#828282")}, 800)
             setTimeout(() => {document.body.setAttribute("style", "background-color:#848484")}, 850)
@@ -70,21 +70,21 @@ const shoot = function (weapon) {
             setTimeout(() => {document.body.setAttribute("style", "background-color:#E6E6E6")}, 1400)
             setTimeout(() => {document.body.setAttribute("style", "background-color:#F6F6F6")}, 1450)
             setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFFFF")}, 1500)
+            */
         }
         if(health == 0){
             //@ts-ignore
             duelElement.innerHTML = duelElement.innerHTML + "<br>game over, better luck next time!";
             winner = "computer";
             duelElement.setAttribute("class", "fail")
-            document.getElementById("reset").innerHTML = "Reset"
+            document.getElementById("reset").innerHTML = "<button id='reset' class='butts' onclick='shoot(9)'>Reset</button>";
             comWins += 1
         }else if(comHealth == 0){
             //@ts-ignore
             duelElement.innerHTML += "<br>You won!";
             winner = "you";
             duelElement.setAttribute("class", "win")
-            document.getElementById("reset").innerHTML = "Reset"
-            document.getElementById("reset")?.setAttribute("class", "butts");
+            document.getElementById("reset").innerHTML = "<button id='reset' class='butts' onclick='shoot(9)'>Reset</button>";
             wins += 1
         }
     }else if(weapon==9){
