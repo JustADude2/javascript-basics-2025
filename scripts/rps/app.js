@@ -1,5 +1,4 @@
 //@ts-check
-
 const options = ["rock", "paper", "scissors"]
 let duelElement = document.getElementById("duel");
 let health = 2

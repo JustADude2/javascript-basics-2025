@@ -10,6 +10,11 @@
 		<link rel="stylesheet" href="css/style.css" />
 
 		<style>
+			.butts{
+				background-color: #FFFFFF;
+				padding: 4px;
+				box-shadow: 2px 2px 2px #000000;
+			}
 			.fail{
 				border: 5px outset #ff0000;
 				background-color: lightcoral;
@@ -25,11 +30,13 @@
 		<h1>Rock, paper, scissors</h1>
 		<h2>the last duel<br></h2>
 		<button id="reset" onclick="shoot(9)"></button>
-		<button onclick="shoot(0)">Rock!</button>
-		<button onclick="shoot(1)">Paper!</button>
-		<button onclick="shoot(2)">Scissors!</button>
+		<div>
+			<button class="butts" onclick="shoot(0)">Rock!</button>
+			<button class="butts" onclick="shoot(1)">Paper!</button>
+			<button class="butts" onclick="shoot(2)">Scissors!</button>
+		</div>
 		<div id="duel"></div>
 
-		<script src="scripts/rps/app.js"></script>
+		<script src="scripts/rps/better rps app.js"></script>
 	</body>
 </html>
