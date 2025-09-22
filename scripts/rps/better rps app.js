@@ -80,6 +80,20 @@ const shoot = function (weapon) {
             document.getElementById("reset").innerHTML = "<button id='reset' class='butts' onclick='shoot(9)'>Reset</button>";
             comWins += 1
         }else if(comHealth == 0){
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF04")}, 50)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF08")}, 100)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF10")}, 150)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF18")}, 200)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF24")}, 250)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF30")}, 300)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF48")}, 350)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF60")}, 400)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF7B")}, 450)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFF98")}, 500)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFFB8")}, 550)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFFD8")}, 600)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFFEB")}, 650)
+            setTimeout(() => {document.body.setAttribute("style", "background-color:#FFFFFF")}, 700)
             //@ts-ignore
             duelElement.innerHTML += "<br>You won!";
             winner = "you";
