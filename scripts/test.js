@@ -50,7 +50,7 @@ const rect = function(x, y, x2, y2) {
 
 setTimeout(() => {draw()}, 100);
 let up, down, left, right = false;
-let x, y = 1;
+let x = 1, y = 1;
 document.addEventListener("keydown", (event) => {
     console.log(event.key);
     if (event.key == "ArrowUp" || event.code == "KeyW") {
@@ -109,13 +109,16 @@ const draw = function() {
     if (left && !right && ((up || down) && !(up && down))){
         x-= Math.sqrt(0.5)
     }
-    if (right && !right && !((up || down) && !(up && down))){
+    if (right && !left && !((up || down) && !(up && down))){
         x++
     }
     if (right && !left && ((up || down) && !(up && down))){
         x+= Math.sqrt(0.5)
     }
-    fill("ff", "00", "00")
-
-    rect(x, y, 100, 100)
+    console.log(x)
+    console.log(y)
+    fill("ff", "ff", "ff")
+    setTimeout(() => {rect(0, 0, 1280, 640)}, 10)
+    setTimeout(() => {fill("80", "80", "80")}, 20)
+    setTimeout(() => {rect(x, y, 100, 100)}, 30)
 }
