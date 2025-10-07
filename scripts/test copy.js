@@ -3,19 +3,18 @@ const ctx = document.getElementById("screen")
 //@ts-ignore
 const c = ctx.getContext("2d")
 let x2 = 0, y2 = 0, type = "", num = 0;
-let fps = 60
+let fps = 60;
 const width = 1280
 const height = 640
+let attacks = [620, 20, "projectile", Math.PI * 1.325, width/2, height/2, "laser", Math.PI * 1.75]
 let rgb = "#ffffff"
 let rgb2 = "#000000"
 let fl = true
 let st = false
-let up, down, left, right;
+let up, down, left, right = false;
 let x = 1, y = 1;
 let fpsCalc = 1000/60
 let area = "Rock n' Roll"
-let attacks;
-let multiFrame = [];
 document.addEventListener("keydown", (event) => {
     console.log(event.key);
     if (event.key == "ArrowUp" || event.code == "KeyW") {
@@ -54,38 +53,7 @@ document.addEventListener("keyup", (event) => {
         down = false;
     }
 })
-class Enemy {
-    constructor(name, level){
-        this.name = name;
-        let slashes;
-        if(name == "knight"){
-            this.attackTypes = ["slash", "projectile"]
-            this.attacksPer = 1
-            this.damage = 10
-        }else if(name == "stone"){
-            this.attackTypes = ["projectile"]
-            this.attacksPer = 1
-            this.damage = 10
-        }else if(name == "sentinal"){
-            this.attackTypes = ["projectile", "laser"]
-            this.attacksPer = 2;
-            this.damage = 20
-        }else{
-            this.attackTypes = []
-        }
-    }
-    drawLoop(timestamp) {
-        if(this.attackTypes[0] == "slash"){
-            if(Math.floor(timestamp/750) >= slashes){
-                attack.slash(x, y, this.damage)
-            }
-        }else if(Math.floor(timestamp/5000) == 0 && attacks.length == 0){
-            if(this.attackTypes.length == this.attacksPer){
-                attacks.push(this.attackTypes)
-            }
-        }
-    }
-}
+
 let attack = {
     laser: function (x2, y2, num, i){
     let num2 = num + Math.PI
@@ -133,24 +101,7 @@ let attack = {
         attacks[i - 3] = x2
         attacks[i - 2] = y2
         attacks[i] = num
-    },
-    slash: function (x2, y2, damage){
-
     }
-}
-let enemy;
-function battle(){
-    let newEnemy = Math.random()
-    if (area == "Rock n' Roll"){
-        if (Math.floor(newEnemy*2) == 0){
-            enemy = new Enemy("knight", );
-        }else{
-            enemy = new Enemy("")
-        }
-    }
-}
-function storyBattle(enemy){
-
 }
 const draw = function(timestamp) {
     fps = 1000/(timestamp-fpsCalc)
@@ -232,7 +183,18 @@ const draw = function(timestamp) {
     c.fillRect(0, 0, 1280, 640)
     c.fillStyle = "#ff0000"
     c.fillRect(x, y, 40, 40)
-    
+    for (let i = 0; i<attacks.length; i++){
+        if(i%4 == 0){
+            x2 = attacks[i]
+        }else if(i%4 == 1){
+            y2 = attacks[i]
+        }else if(i%4 == 2){
+            type = attacks[i]
+        }else{
+            num = attacks[i]
+            attack[type](x2, y2, num, i)
+        }
+    }
     if (timestamp >= 4000 && timestamp <= 4999){
         c.fillStyle = "#b04040"
         c.fillRect(-1, height/4*3 - 20, width + 2, 20)
